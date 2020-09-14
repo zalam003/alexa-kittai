@@ -260,7 +260,8 @@ then
       "${CMAKE_PLATFORM_SPECIFIC[@]}"
   sed -E -i "s:CXX_PLATFORM_DEPENDENT_FLAGS_"$BUILDTYPE"\s+\"(.*)\":CXX_PLATFORM_DEPENDENT_FLAGS_"$BUILDTYPE" \"\1 -D_GLIBCXX_USE_CXX11_ABI=0 -pg\":" ../avs-device-sdk/build/cmake/BuildOptions.cmake
   cd $BUILD_PATH
-  make SampleApp -j1
+  #make SampleApp -j1
+  make install -j1
 
 else
   cd $BUILD_PATH
